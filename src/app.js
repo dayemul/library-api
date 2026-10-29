@@ -3,6 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const authRoutes = require('./routes/authRoutes');
 const bookRoutes = require('./routes/bookRoutes');
+const borrowRoutes = require('./routes/borrowRoutes');
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
+app.use('/api/borrow', borrowRoutes);
 
 module.exports = app;
